@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Lista de Categorias</h3>
+
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Situação</th>
+		<th>Ações</th>
+	</tr>
+	<tr th:each="cat : ${categorias}">
+		<td th:text="${cat.nome}"></td>
+		<td th:text="${cat.situacao}"></td>
+		<td><a th:href="|exibirCategoria?codigo=${cat.codigo}|">Alterar</a>
+			<a th:href="|excluirCategoria?codigo=${cat.codigo}|">Excluir</a>
+		</td>
+	</tr>
+	
+</table>
+
+</body>
+</html>
